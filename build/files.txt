@@ -1,0 +1,4 @@
+web.config
+AnotherFeature.xml
+Config\Feature.config
+Config\Sub\Feature.config
