@@ -1,2 +1,3 @@
+# list of environments, one per line
 Debug
 Release

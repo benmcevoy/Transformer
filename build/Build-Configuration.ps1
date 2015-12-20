@@ -12,10 +12,16 @@ function Main($environments, $files)
     # process
     foreach($environment in $environments) 
     {
+        if([string]::IsNullOrWhiteSpace($environment)) { continue }
+        if($environment.StartsWith("#")) { continue }
+
         New-Item "$global:outputRootPath\$environment" -type directory | Out-Null 
 
         foreach($file in $files)
         {
+            if([string]::IsNullOrWhiteSpace($file)) { continue }
+            if($file.StartsWith("#")) { continue }
+
             Transform $environment $file
         }
     }
